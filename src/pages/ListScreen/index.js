@@ -21,7 +21,7 @@ export default () => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'Suas Notas',
+      title: 'Suas Anotações',
       headerRight: () => (
         <AddButton
           underlayColor="tranparent"

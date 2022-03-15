@@ -9,6 +9,8 @@ import {
   SaveButton,
   CloseButton,
   CloseButtonImage,
+  DeleteButton,
+  DeleteButtonText,
 } from './styles';
 
 export default () => {
@@ -75,6 +77,16 @@ export default () => {
     }
   };
 
+  const handleDeleteNoteButton = () => {
+    dispatch({
+      type: 'DELETE_NOTE',
+      payload: {
+        key: route.params.key,
+      },
+    });
+    navigation.goBack();
+  };
+
   return (
     <Container>
       <TextInput
@@ -87,11 +99,16 @@ export default () => {
       <BodyInput
         value={body}
         onChangeText={(text) => setBody(text)}
-        placeholder="Digite o titulo da anotacao"
+        placeholder="Digite o corpo da anotacao"
         placeholderTextColor="#ccc"
         multiline={true}
         textAlignVertical="top"
       />
+      {status == 'edit' && (
+        <DeleteButton underlayColor="#FF0000" onPress={handleDeleteNoteButton}>
+          <DeleteButtonText>Excluir anotacao</DeleteButtonText>
+        </DeleteButton>
+      )}
     </Container>
   );
 };
