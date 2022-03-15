@@ -19,3 +19,21 @@ export const BodyInput = styled.TextInput`
   color: #fff;
   background-color: #f00;
 `;
+
+export const SaveButton = styled.TouchableHighlight`
+  margin-right: 15px;
+`;
+
+export const SaveButtonImage = styled.Image`
+  width: 24px;
+  height: 24px;
+`;
+
+export const CloseButton = styled.TouchableHighlight`
+  margin-right: 15px;
+`;
+
+export const CloseButtonImage = styled.Image`
+  width: 18px;
+  height: 18px;
+`;
